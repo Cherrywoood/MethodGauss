@@ -2,6 +2,6 @@ package gaussMethod;
 
 import matrixInfo.MatrixInfo;
 
-public abstract class GaussMethod {
-    public  abstract double[] solveSystem(MatrixInfo matrixInfo);
+public interface GaussMethod {
+    public double[] solveSystem(MatrixInfo matrixInfo);
 }

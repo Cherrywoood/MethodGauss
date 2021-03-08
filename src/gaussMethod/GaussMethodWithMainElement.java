@@ -4,7 +4,7 @@ import matrixInfo.MatrixInfo;
 import matrixInfo.NumberSystemSolutions;
 import matrixInfo.determinate.DeterminateCalculator;
 
-public class GaussMethodWithMainElement extends GaussMethod {
+public class GaussMethodWithMainElement implements GaussMethod {
 
     /**
      * Основноый метод, решает СЛАУ методом Гаусса с выбором главного элемента
@@ -101,7 +101,7 @@ public class GaussMethodWithMainElement extends GaussMethod {
     }
 
     /**
-     * Проверяет, имеет матрица бесконечное число решений или не имеет решений
+     * Проверяет, имеет матрица бесконечное множество решений или не имеет решений
      * @param n - размер матрицы
      * @param extendedMatrix - расширенная матрица
      */
@@ -112,7 +112,7 @@ public class GaussMethodWithMainElement extends GaussMethod {
             System.out.println("Определитель равен: 0");
             System.exit(0);
         } else if (countSolutions == -1) {
-            System.out.println("Система имеет бесконечное количество решений!");
+            System.out.println("Система имеет бесконечное множество решений!");
             System.out.println("Определитель равен: 0");
             System.exit(0);
         }
