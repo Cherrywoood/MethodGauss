@@ -41,7 +41,6 @@ public class GaussMethodWithMainElement implements GaussMethod {
      * @return возвращает true, если была перестановка строк и falsе - если нет
      */
     private boolean chooseMainElement(double[][] extendedMatrix, int n, int m) {
-        int count = 0;
         double max = extendedMatrix[m][m];
         int index_max = 0;
         for (int i = m + 1; i < n; i++) {
@@ -56,6 +55,11 @@ public class GaussMethodWithMainElement implements GaussMethod {
                     extendedMatrix[index_max] = extendedMatrix[m]);
             return true;
 
+        }
+        if (max == 0) {
+            System.out.println("Определитель равен: 0\n" +
+                    "Матрица вырожденная");
+            System.exit(0);
         }
         return false;
     }
@@ -77,6 +81,7 @@ public class GaussMethodWithMainElement implements GaussMethod {
     }
 
     /**
+     * Обратный ход
      * Вычисляет вектор неизвестных
      * @param n - размер матрицы
      * @param extendedMatrix - расширенная матрица
@@ -109,11 +114,13 @@ public class GaussMethodWithMainElement implements GaussMethod {
         int countSolutions = NumberSystemSolutions.calculateNumberSolutes(extendedMatrix, n);
         if (countSolutions == 0) {
             System.out.println("Система не имеет решений!");
-            System.out.println("Определитель равен: 0");
+            System.out.println("Определитель равен: 0\n" +
+                    "Матрица вырожденная");
             System.exit(0);
         } else if (countSolutions == -1) {
             System.out.println("Система имеет бесконечное множество решений!");
-            System.out.println("Определитель равен: 0");
+            System.out.println("Определитель равен: 0\n" +
+                    "Матрица вырожденная");
             System.exit(0);
         }
     }

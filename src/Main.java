@@ -44,7 +44,6 @@ public class Main {
         // Выводит вектор неизвестных
         System.out.println("\nОТВЕТ:");
         for (int i = 0; i < result.length; i++) {
-            if(result[i] == 0) result[i] = 0;
             System.out.printf("X[%d] = %.5f\n",i+1,result[i]);
         }
 
@@ -56,8 +55,8 @@ public class Main {
             for (int j = 0; j < n; j++) {
                sum+=matrixInfo.getExtendedMatrix()[i][j]*result[j];
             }
-            double r = matrixInfo.getExtendedMatrix()[i][n] - sum;
-            System.out.printf("R[%d] = %f\n",i+1,r);
+            System.out.printf("R[%d] = ",i+1);
+            System.out.println(matrixInfo.getExtendedMatrix()[i][n] - sum);
         }
         scanner.close();
     }

@@ -15,10 +15,8 @@ public class MatrixInfo {
     public void showExtendedMatrix() {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if(extendedMatrix[i][j] == 0) extendedMatrix[i][j] = 0;
                 System.out.printf("|%10.5f ",extendedMatrix[i][j]);
             }
-            if(extendedMatrix[i][n] == 0) extendedMatrix[i][n] = 0;
             System.out.printf("||%10.5f\n",extendedMatrix[i][n]);
         }
     }
