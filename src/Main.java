@@ -4,6 +4,7 @@ import input.Input;
 import input.InputConsole;
 import input.InputFile;
 import matrixInfo.MatrixInfo;
+import output.Output;
 import validator.IValidator;
 import validator.Validator;
 
@@ -44,7 +45,7 @@ public class Main {
         // Выводит вектор неизвестных
         System.out.println("\nОТВЕТ:");
         for (int i = 0; i < result.length; i++) {
-            System.out.printf("X[%d] = %.5f\n",i+1,result[i]);
+            Output.printVectorX(result[i], i+1);
         }
 
         // Считает и выводит вектор невязок
@@ -55,8 +56,7 @@ public class Main {
             for (int j = 0; j < n; j++) {
                sum+=matrixInfo.getExtendedMatrix()[i][j]*result[j];
             }
-            System.out.printf("R[%d] = ",i+1);
-            System.out.println(matrixInfo.getExtendedMatrix()[i][n] - sum);
+            Output.printVectorR(matrixInfo.getExtendedMatrix()[i][n], i+1);
         }
         scanner.close();
     }

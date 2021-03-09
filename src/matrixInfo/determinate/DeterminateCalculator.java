@@ -14,8 +14,12 @@ public class DeterminateCalculator{
         for (int i = 0; i < n; i++) {
             det *= Math.pow(-1, k) * extendedMatrix[i][i];
         }
-        System.out.printf("Определитель равен: %.2f\n", det);
-        if (det == 0) System.out.println("Матрица вырожденная");
+        System.out.print("Определитель равен: ");
+        System.out.println(det);
+        if (det == 0) {
+            det = 0;
+            System.out.println("Матрица вырожденная");
+        }
     }
 
 }

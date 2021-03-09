@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="methodGaus:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/methodGaus_jar</output-path>
+    <root id="archive" name="methodGaus.jar">
+      <element id="module-output" name="methodGaus" />
+    </root>
+  </artifact>
+</component>

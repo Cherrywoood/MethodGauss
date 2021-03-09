@@ -1,5 +1,7 @@
 package matrixInfo;
 
+import output.Output;
+
 public class MatrixInfo {
     private int n;
     private double[][]extendedMatrix;
@@ -15,9 +17,12 @@ public class MatrixInfo {
     public void showExtendedMatrix() {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                System.out.printf("|%10.5f ",extendedMatrix[i][j]);
+                Output.printCoefficient(extendedMatrix[i][j]);
             }
-            System.out.printf("||%10.5f\n",extendedMatrix[i][n]);
+            System.out.print("|");
+            Output.printCoefficient(extendedMatrix[i][n]);
+            System.out.println();
+
         }
     }
     public int getN() {

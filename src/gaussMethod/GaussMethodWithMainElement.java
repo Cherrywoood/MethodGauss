@@ -19,7 +19,6 @@ public class GaussMethodWithMainElement implements GaussMethod {
 
         System.out.println("Выолняется метод Гаусса...");
         for (int m = 0; m < n - 1; m++) {
-            checkMatrix(n,extendedMatrix);
             System.out.printf("Шаг %d\n", m + 1);
             if (chooseMainElement(extendedMatrix, n, m)) {
                 ++count;
@@ -28,7 +27,6 @@ public class GaussMethodWithMainElement implements GaussMethod {
             matrixInfo.showExtendedMatrix();
             System.out.println();
         }
-
         DeterminateCalculator.calculateDet(count, n, extendedMatrix);
         return getResult(n, extendedMatrix);
     }
@@ -49,7 +47,6 @@ public class GaussMethodWithMainElement implements GaussMethod {
                 index_max = i;
             }
         }
-        System.out.printf("Максимальный элемент - %.5f, в строке - %d\n", max, index_max + 1);
         if (max != extendedMatrix[m][m]) { //если максимальный эл. в другой строке, то свопаем с текущей
             extendedMatrix[m] = swap(extendedMatrix[index_max],
                     extendedMatrix[index_max] = extendedMatrix[m]);
@@ -57,14 +54,19 @@ public class GaussMethodWithMainElement implements GaussMethod {
 
         }
         if (max == 0) {
+            max = 0;
             System.out.println("Определитель равен: 0\n" +
-                    "Матрица вырожденная");
+                    "Матрица вырожденная\n" +
+                    "Ведущий элемент равен нулю");
+            checkMatrix(n,extendedMatrix);
             System.exit(0);
         }
+        System.out.printf("Максимальный элемент - %.5f, в строке - %d\n", max, index_max + 1);
         return false;
     }
 
     /**
+     * Прямой ход
      * Метод, который исключает неизвестные в матрице
      * @param extendedMatrix - расширенная матрица
      * @param n - размер матрицы
@@ -114,13 +116,9 @@ public class GaussMethodWithMainElement implements GaussMethod {
         int countSolutions = NumberSystemSolutions.calculateNumberSolutes(extendedMatrix, n);
         if (countSolutions == 0) {
             System.out.println("Система не имеет решений!");
-            System.out.println("Определитель равен: 0\n" +
-                    "Матрица вырожденная");
             System.exit(0);
         } else if (countSolutions == -1) {
             System.out.println("Система имеет бесконечное множество решений!");
-            System.out.println("Определитель равен: 0\n" +
-                    "Матрица вырожденная");
             System.exit(0);
         }
     }
