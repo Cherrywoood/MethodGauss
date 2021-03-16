@@ -56,7 +56,7 @@ public class Main {
             for (int j = 0; j < n; j++) {
                sum+=matrixInfo.getExtendedMatrix()[i][j]*result[j];
             }
-            Output.printVectorR(matrixInfo.getExtendedMatrix()[i][n], i+1);
+            Output.printVectorR(matrixInfo.getExtendedMatrix()[i][n]-sum, i+1);
         }
         scanner.close();
     }

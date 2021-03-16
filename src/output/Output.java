@@ -9,12 +9,12 @@ public class Output {
 
     public static void printVectorR(double num, int i) {
         if (num == 0) num = 0;
-        else System.out.printf("R[%d] = %f\n",i, num);
+        System.out.printf("R[%d] = %f\n",i, num);
     }
 
     public static void printVectorX(double num, int i) {
         if (num == 0) num = 0;
-        else System.out.printf("X[%d] = %.5f\n", i, num);
+        System.out.printf("X[%d] = %.5f\n", i, num);
 
     }
 }
